@@ -1,0 +1,35 @@
+import { Voiture, Bus } from "./question02/entity/heritage";
+
+var faker = require ('faker');
+
+function genererHeritageJson(){
+   
+   var enfant = new Bus()
+
+   var tab = [];
+
+
+   for (let index = 0; index < 3; index++) {
+    var  parent =  new Voiture();
+       parent.id = index;
+       parent.taille = "grand";
+
+
+       tab.push({"parent ": parent});
+
+       var enfant = new Bus()
+       enfant.id= index;
+       enfant.taille = "petite"
+       enfant.discriminant= "ENFANT"
+       enfant.nom="toto"
+
+       tab.push({"enfant ": enfant});
+
+
+   }
+
+return {"diagramme" : tab};
+
+}
+
+module.exports = genererHeritageJson;
