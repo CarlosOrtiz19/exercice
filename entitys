@@ -1,0 +1,21 @@
+export class Voiture {
+   id:number;
+   taille: string;
+
+   constructor(){
+      this.id = undefined;
+      this.taille = undefined;
+   }
+}
+
+export class Bus extends Voiture{
+    nom: string;
+    discriminant: string;
+
+    constructor(){
+        super();
+        this.nom = undefined;
+        this.discriminant =  "ENFANT";
+    }
+}
+
